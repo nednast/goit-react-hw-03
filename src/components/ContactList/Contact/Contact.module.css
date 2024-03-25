@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.delete {
+  height: 30px;
+  margin-top: 11px;
+}
