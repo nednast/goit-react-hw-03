@@ -9,6 +9,12 @@ const App = () => {
   const [contacts, setContacts] = useState(initialValues);
   const [filter, setFilter] = useState("");
 
+  const deleteContact = (contactId) => {
+    setContacts((prevContact) => {
+      return prevContact.filter((contact) => contact.id !== contactId);
+    });
+  };
+
   const visibleContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
@@ -17,7 +23,7 @@ const App = () => {
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList visbleContacts={visibleContacts} />
+      <ContactList visbleContacts={visibleContacts} onDelete={deleteContact} />
     </>
   );
 };

@@ -1,0 +1,9 @@
+.filterWrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+input {
+  width: 300px;
+}
