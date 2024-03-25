@@ -9,20 +9,16 @@ const App = () => {
   const [contacts, setContacts] = useState(initialValues);
   const [filter, setFilter] = useState("");
 
-  const searchBoxOnChange = (e) => {
-    setFilter((prevValue) => e.target.value);
-
-    const visibleContacts = contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-    return (
-      <>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <SearchBox value={filter} onFilter={searchBoxOnChange} />
-        <ContactList visbleContacts={visibleContacts} />
-      </>
-    );
-  };
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+  return (
+    <>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <SearchBox value={filter} onFilter={setFilter} />
+      <ContactList visbleContacts={visibleContacts} />
+    </>
+  );
 };
 export default App;
