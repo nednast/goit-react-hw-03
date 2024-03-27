@@ -1,0 +1,20 @@
+.contactformWrapper {
+  margin-top: 40px;
+  margin-left: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 30px;
+  width: 370px;
+}
+
+.submit {
+  width: 200px;
+  height: 40px;
+  font-size: 25px;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.number {
+  margin-top: 40px;
+}
