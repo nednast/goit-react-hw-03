@@ -13,8 +13,8 @@ const App = () => {
   const addContact = (contact) => {
     const newContact = {
       id: nanoid(),
-      name: contact.contactName,
-      number: contact.contactNumber,
+      name: contact.name,
+      number: contact.number,
     };
     setContacts((contacts) => {
       return [...contacts, newContact];
