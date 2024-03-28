@@ -2,8 +2,8 @@ import { Formik, Form, Field } from "formik";
 import css from "./ContactForm.module.css";
 
 const initialValues = {
-  name: "",
-  number: "",
+  contactName: "",
+  contactNumber: "",
 };
 
 const ContactForm = ({ addContact }) => {
