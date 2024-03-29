@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
 import initialValues from "./components/Contact/initialValues.json";
 import { nanoid } from "nanoid";
-
 const App = () => {
-  const [contacts, setContacts] = useState(initialValues);
+  const [contacts, setContacts] = useState(() => {
+    if (localStorage.getItem("contacts")) {
+      return JSON.parse(localStorage.getItem("contacts"));
+    } else {
+      return initialValues;
+    }
+  });
   const [filter, setFilter] = useState("");
 
   const addContact = (contact) => {
@@ -30,6 +35,10 @@ const App = () => {
   const visibleContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
 
   return (
     <>

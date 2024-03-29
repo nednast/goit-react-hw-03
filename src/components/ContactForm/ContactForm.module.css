@@ -18,3 +18,9 @@
 .number {
   margin-top: 40px;
 }
+
+.contactValidationError {
+  font-size: 12px;
+  margin: 0;
+  color: red;
+}
